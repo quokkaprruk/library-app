@@ -1,2 +1,11 @@
 # library-app
-coursework project
+
+Coursework project
+
+**Memory Allocation**
+
+**Rule of three**
+
+**Inheritance**
+
+**Polymorphism**

@@ -1,0 +1,25 @@
+Book.cpp: In copy constructor ‘sdds::Book::Book(const sdds::Book&)’:
+Book.cpp:24:43: error: ‘strlen’ was not declared in this scope
+    b_author = new char[strlen(src.b_author) + 1];
+                                           ^
+Book.cpp:25:33: error: ‘strcpy’ was not declared in this scope
+    strcpy(b_author, src.b_author);
+                                 ^
+Book.cpp: In member function ‘sdds::Book& sdds::Book::operator=(const sdds::Book&)’:
+Book.cpp:38:44: error: ‘strlen’ was not declared in this scope
+     b_author = new char[strlen(src.b_author) + 1];
+                                            ^
+Book.cpp:39:34: error: ‘strcpy’ was not declared in this scope
+     strcpy(b_author, src.b_author);
+                                  ^
+Book.cpp: In member function ‘virtual std::ostream& sdds::Book::write(std::ostream&) const’:
+Book.cpp:59:52: error: ‘strncpy’ was not declared in this scope
+    strncpy(temp_author, b_author, SDDS_AUTHOR_WIDTH);
+                                                    ^
+Book.cpp: In member function ‘virtual std::istream& sdds::Book::read(std::istream&)’:
+Book.cpp:89:46: error: ‘strlen’ was not declared in this scope
+    b_author = new char[strlen(temp_authorName) + 1];
+                                              ^
+Book.cpp:90:36: error: ‘strcpy’ was not declared in this scope
+    strcpy(b_author, temp_authorName);
+                                    ^

@@ -1,0 +1,3 @@
+difficulties in MS4
+-strlen doesn't match in Pubication.cpp
+=> error

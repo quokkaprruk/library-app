@@ -1,0 +1,99 @@
+In file included from Rectangle.h:5:0,
+                 from main_prof.cpp:17:
+LblShape.h:21:13: error: cannot declare parameter ‘src’ to be of abstract type ‘sdds::LblShape’
+   LblShape& operator=(const LblShape src) = delete;
+             ^
+LblShape.h:8:8: note:   because the following virtual functions are pure within ‘sdds::LblShape’:
+  class LblShape : public Shape {
+        ^
+In file included from main_prof.cpp:16:0:
+Shape.h:12:16: note: 	virtual void sdds::Shape::draw(std::ostream&) const
+   virtual void draw(std::ostream& os) const = 0;
+                ^
+In file included from LblShape.cpp:4:0:
+LblShape.h:21:13: error: cannot declare parameter ‘src’ to be of abstract type ‘sdds::LblShape’
+   LblShape& operator=(const LblShape src) = delete;
+             ^
+LblShape.h:8:8: note:   because the following virtual functions are pure within ‘sdds::LblShape’:
+  class LblShape : public Shape {
+        ^
+In file included from LblShape.h:5:0,
+                 from LblShape.cpp:4:
+Shape.h:12:16: note: 	virtual void sdds::Shape::draw(std::ostream&) const
+   virtual void draw(std::ostream& os) const = 0;
+                ^
+LblShape.cpp: In constructor ‘sdds::LblShape::LblShape(const char*)’:
+LblShape.cpp:20:38: error: ‘strlen’ was not declared in this scope
+    m_label = new char[strlen(newLabel) + 1];
+                                      ^
+LblShape.cpp:21:28: error: ‘strcpy’ was not declared in this scope
+    strcpy(m_label, newLabel);
+                            ^
+LblShape.cpp: In member function ‘virtual void sdds::LblShape::getSpecs(std::istream&)’:
+LblShape.cpp:44:35: error: ‘strcpy’ was not declared in this scope
+   strcpy(m_label, labelStr.c_str());
+                                   ^
+In file included from Line.h:5:0,
+                 from Line.cpp:4:
+LblShape.h:21:13: error: cannot declare parameter ‘src’ to be of abstract type ‘sdds::LblShape’
+   LblShape& operator=(const LblShape src) = delete;
+             ^
+LblShape.h:8:8: note:   because the following virtual functions are pure within ‘sdds::LblShape’:
+  class LblShape : public Shape {
+        ^
+In file included from LblShape.h:5:0,
+                 from Line.h:5,
+                 from Line.cpp:4:
+Shape.h:12:16: note: 	virtual void sdds::Shape::draw(std::ostream&) const
+   virtual void draw(std::ostream& os) const = 0;
+                ^
+In file included from Line.cpp:4:0:
+Line.h: In constructor ‘sdds::Line::Line()’:
+Line.h:10:7: warning: ‘sdds::Line::m_length’ will be initialized after [-Wreorder]
+   int m_length; //hold the length of line
+       ^
+Line.cpp:10:38: warning:   base ‘sdds::LblShape’ [-Wreorder]
+  Line::Line(): m_length(0), LblShape() {};
+                                      ^
+Line.cpp:10:2: warning:   when initialized here [-Wreorder]
+  Line::Line(): m_length(0), LblShape() {};
+  ^
+In file included from Rectangle.h:5:0,
+                 from Rectangle.cpp:3:
+LblShape.h:21:13: error: cannot declare parameter ‘src’ to be of abstract type ‘sdds::LblShape’
+   LblShape& operator=(const LblShape src) = delete;
+             ^
+LblShape.h:8:8: note:   because the following virtual functions are pure within ‘sdds::LblShape’:
+  class LblShape : public Shape {
+        ^
+In file included from LblShape.h:5:0,
+                 from Rectangle.h:5,
+                 from Rectangle.cpp:3:
+Shape.h:12:16: note: 	virtual void sdds::Shape::draw(std::ostream&) const
+   virtual void draw(std::ostream& os) const = 0;
+                ^
+In file included from Rectangle.cpp:3:0:
+Rectangle.h: In constructor ‘sdds::Rectangle::Rectangle()’:
+Rectangle.h:11:7: warning: ‘sdds::Rectangle::m_height’ will be initialized after [-Wreorder]
+   int m_height;
+       ^
+Rectangle.h:10:7: warning:   ‘int sdds::Rectangle::m_width’ [-Wreorder]
+   int m_width; 
+       ^
+Rectangle.cpp:9:2: warning:   when initialized here [-Wreorder]
+  Rectangle::Rectangle() : m_height(0), m_width(0), LblShape(){};
+  ^
+In file included from Rectangle.cpp:3:0:
+Rectangle.h:10:7: warning: ‘sdds::Rectangle::m_width’ will be initialized after [-Wreorder]
+   int m_width; 
+       ^
+Rectangle.cpp:9:61: warning:   base ‘sdds::LblShape’ [-Wreorder]
+  Rectangle::Rectangle() : m_height(0), m_width(0), LblShape(){};
+                                                             ^
+Rectangle.cpp:9:2: warning:   when initialized here [-Wreorder]
+  Rectangle::Rectangle() : m_height(0), m_width(0), LblShape(){};
+  ^
+Rectangle.cpp: In constructor ‘sdds::Rectangle::Rectangle(const char*, int, int)’:
+Rectangle.cpp:15:51: error: ‘strlen’ was not declared in this scope
+   if (m_height < 3 || m_width < strlen(label() + 2)) {
+                                                   ^
